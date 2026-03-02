@@ -122,7 +122,11 @@ def draw(input_id, input_pass):
 
         try:
             url_open(driver, link_list[i])
-            sleep(2)
+            wait.until(
+                EC.presence_of_element_located(
+                    (By.TAG_NAME, "body")
+                )
+            )
             image = driver.find_element(By.XPATH, "//img[@id='entry']")
             driver.execute_script("arguments[0].click();", image)
             wait.until(

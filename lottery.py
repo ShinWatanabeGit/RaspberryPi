@@ -124,7 +124,7 @@ def draw(input_id, input_pass):
             url_open(driver, link_list[i])
             wait.until(
                 EC.presence_of_element_located(
-                    (By.TAG_NAME, "body")
+                    (By.CLASS_NAME, "lot-partition")
                 )
             )
             image = driver.find_element(By.XPATH, "//img[@id='entry']")
